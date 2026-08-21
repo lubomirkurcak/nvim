@@ -73,12 +73,14 @@ Git is also required for plugin installation and Git integration. Make sure the 
 
 After installation, run `:checkhealth config` in Neovim to see which core and feature-specific dependencies are available.
 
-#### Optional language tooling
+#### Optional components
 
-Expand a language below and install only the tools you need.
+Install only the components you need.
 
 <details>
-<summary>Rust — rust-analyzer, Cargo, and Clippy</summary>
+<summary>Language servers and supporting tools</summary>
+
+##### Rust — rust-analyzer, Cargo, and Clippy
 
 Install [Rust with rustup](https://www.rust-lang.org/tools/install), then add the language server and Clippy components:
 
@@ -86,10 +88,7 @@ Install [Rust with rustup](https://www.rust-lang.org/tools/install), then add th
 rustup component add rust-analyzer clippy
 ```
 
-</details>
-
-<details>
-<summary>OCaml — ocamllsp</summary>
+##### OCaml — ocamllsp
 
 Install the OCaml language server through opam:
 
@@ -97,10 +96,7 @@ Install the OCaml language server through opam:
 opam install ocaml-lsp-server
 ```
 
-</details>
-
-<details>
-<summary>Go — gopls and the Go toolchain</summary>
+##### Go — gopls and the Go toolchain
 
 Install [Go](https://go.dev/doc/install), then install `gopls`:
 
@@ -108,17 +104,11 @@ Install [Go](https://go.dev/doc/install), then install `gopls`:
 go install golang.org/x/tools/gopls@latest
 ```
 
-</details>
-
-<details>
-<summary>JavaScript and TypeScript — Deno</summary>
+##### JavaScript and TypeScript — Deno
 
 Install the [Deno runtime](https://docs.deno.com/runtime/getting_started/installation/). It provides the `deno` language server used by this config.
 
-</details>
-
-<details>
-<summary>HTML — VS Code HTML language server</summary>
+##### HTML — VS Code HTML language server
 
 Install the language server with npm:
 
@@ -126,10 +116,7 @@ Install the language server with npm:
 npm install --global vscode-langservers-extracted
 ```
 
-</details>
-
-<details>
-<summary>TOML — Taplo</summary>
+##### TOML — Taplo
 
 Install the Taplo language server with Cargo:
 
@@ -137,19 +124,11 @@ Install the Taplo language server with Cargo:
 cargo install --features lsp --locked taplo-cli
 ```
 
-</details>
-
-<details>
-<summary>Lua — lua-language-server</summary>
+##### Lua — lua-language-server
 
 Download the latest [lua-language-server release](https://github.com/LuaLS/lua-language-server/releases), extract it, and add its `bin` directory to your `PATH`.
 
-</details>
-
-#### Optional components
-
-<details>
-<summary>Kulala HTTP support</summary>
+##### Kulala HTTP support
 
 Install `curl` to send requests from `.http` and `.rest` files. For syntax highlighting and formatting, also install the `tree-sitter` CLI:
 
