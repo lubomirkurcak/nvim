@@ -51,8 +51,8 @@ git clone https://github.com/lkurcak/nvim
 
 1. Clone the repo to your config file:
 
-```sh
-cd %LOCALAPPDATA%
+```powershell
+Set-Location $env:LOCALAPPDATA
 git clone https://github.com/lkurcak/nvim
 ```
 
