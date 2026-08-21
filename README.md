@@ -74,6 +74,7 @@ Git is also required for plugin installation and Git integration. Make sure the 
 
 After installation, run `:checkhealth config` in Neovim to see which core and feature-specific dependencies are available.
 
+<details>
 <summary>Language servers and supporting tools</summary>
 
 ##### Rust — rust-analyzer, Cargo, and Clippy
