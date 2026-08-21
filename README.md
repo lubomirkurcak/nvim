@@ -24,7 +24,6 @@ git clone https://github.com/lkurcak/nvim
 
 ```sh
 brew install ripgrep
-brew install deno
 ```
 
 </details>
@@ -45,7 +44,6 @@ git clone https://github.com/lkurcak/nvim
 
 2. Install dependencies:
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
-* [`deno`](https://docs.deno.com/runtime/getting_started/installation/)
 
 </details>
 
@@ -67,24 +65,73 @@ git clone https://github.com/lkurcak/nvim
 
 ```powershell
 winget install BurntSushi.ripgrep.MSVC
-winget install DenoLand.Deno
 ```
 
 </details>
 
-#### Optional installations
+Git is also required for plugin installation and Git integration. Make sure the `git` command is available in your `PATH`.
 
-<details><summary>Rust LSP</summary>
-  
-1. Install [`rustup`](https://www.rust-lang.org/tools/install)
+After installation, run `:checkhealth config` in Neovim to see which core and feature-specific dependencies are available.
 
-2. Install `rust-analyzer`:
+#### Optional language tooling
+
+Expand a language below and install only the tools you need.
+
+<details>
+<summary>Rust — rust-analyzer, Cargo, and Clippy</summary>
+
+Install [Rust with rustup](https://www.rust-lang.org/tools/install), then add the language server and Clippy components:
 
 ```sh
-rustup component add rust-analyzer
+rustup component add rust-analyzer clippy
 ```
 
-3. Install `taplo`:
+</details>
+
+<details>
+<summary>OCaml — ocamllsp</summary>
+
+Install the OCaml language server through opam:
+
+```sh
+opam install ocaml-lsp-server
+```
+
+</details>
+
+<details>
+<summary>Go — gopls and the Go toolchain</summary>
+
+Install [Go](https://go.dev/doc/install), then install `gopls`:
+
+```sh
+go install golang.org/x/tools/gopls@latest
+```
+
+</details>
+
+<details>
+<summary>JavaScript and TypeScript — Deno</summary>
+
+Install the [Deno runtime](https://docs.deno.com/runtime/getting_started/installation/). It provides the `deno` language server used by this config.
+
+</details>
+
+<details>
+<summary>HTML — VS Code HTML language server</summary>
+
+Install the language server with npm:
+
+```sh
+npm install --global vscode-langservers-extracted
+```
+
+</details>
+
+<details>
+<summary>TOML — Taplo</summary>
+
+Install the Taplo language server with Cargo:
 
 ```sh
 cargo install --features lsp --locked taplo-cli
@@ -92,17 +139,19 @@ cargo install --features lsp --locked taplo-cli
 
 </details>
 
-<details><summary>Lua LSP</summary>
+<details>
+<summary>Lua — lua-language-server</summary>
 
-Download latest release from https://github.com/LuaLS/lua-language-server/releases
-
-Unzip, go to `bin` and make sure `lua-language-server` is in your OS `PATH`.
+Download the latest [lua-language-server release](https://github.com/LuaLS/lua-language-server/releases), extract it, and add its `bin` directory to your `PATH`.
 
 </details>
 
-<details><summary>Kulala HTTP parser</summary>
+#### Optional components
 
-Install the `tree-sitter` CLI if you want Kulala syntax highlighting and formatting support for `.http` / `.rest` files.
+<details>
+<summary>Kulala HTTP support</summary>
+
+Install `curl` to send requests from `.http` and `.rest` files. For syntax highlighting and formatting, also install the `tree-sitter` CLI:
 
 ```sh
 cargo install tree-sitter-cli
